@@ -77,6 +77,23 @@ function calculateOrderTotal = (order, price) {
   const total = calculateOrderTotal(order);
   console.log(`Total price for the order: $${total}`);
   //Create calculateOrderTotal function
+
+  // Task 5 - Create a Function to Mark an Order as Completed
+  function completeOrder = (customerName) => {
+    // Looking for order name
+    const order = orders.find(order => order.customerName === customerName);
+    
+    if (!order) {
+      console.log(`Error: ${customerName} not found.`);
+      return;
+    }
+    // Change the status to "Completed"
+    order.status = "Completed";
+    console.log(`${customerName} is complete.`);
+  };
+  // Create completeOrder function
+
+  
   
 
 

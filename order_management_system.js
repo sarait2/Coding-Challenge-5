@@ -11,15 +11,20 @@ const inventory = [
 const orders = [];
 //Example Order
 order.push({
-    customer: "Benny Bob"
+    customerName: "Benny Bob",
     items: [
          {name: 'espresso', quantity: 3},
            {name: "latte", quantity: 7},
     ],
     status: "pending",
-    });
-// Include the order to the orders array
-orders.push(order);
+    customerName: "Sally Smith",
+    items: [
+        {name: "iced coffee", quantity: 15},
+        { name: "frappuccino", quantity: 12},
+    ],
+    status:"completed"
+
+});
 console.log(orders);
  //"Initialize orders array"
 
@@ -42,7 +47,7 @@ console.log(orders);
     inventory.find(item => item.name ===item);
     item.quantity -=inventory.quantity;  
  } 
- //"pending" order.push example from above
+ //Pending example
  orders.push({
     customerName: customerName,
     items: [{name:name, quantity: quantity}],
@@ -56,10 +61,10 @@ function calculateOrderTotal = (order, price) {
 
     for (let price of order.items) {
       // Inventory product check for price
-      const product = inventory.find(item => item.name === item.name);
+      const object = inventory.find(item => item.name === item.name);
       
-      if (product) {
-        total += product.price *item.quantity;
+      if (object) {
+        total += object.price *item.quantity;
       }
     }
     return total;
@@ -72,6 +77,7 @@ function calculateOrderTotal = (order, price) {
       { name: "latte", quantity: 7 }
     ],
     status: "Pending"
+    
   };
   
   const total = calculateOrderTotal(order);
@@ -89,7 +95,7 @@ function calculateOrderTotal = (order, price) {
     }
     // Change the status to "Completed"
     order.status = "Completed";
-    console.log(`${"Benny Bob"} is complete.`);
+    console.log(`${"Sally Smith"} completed.`);
   };
   // Create completeOrder function
 

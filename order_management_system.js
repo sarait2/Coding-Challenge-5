@@ -8,10 +8,10 @@ const inventory = [
 //"Initialize inventory with product objects"
 
 // Task 2 - Create an Orders Array of Order Objects
-let orders = [];
+const orders = [];
 //Example Order
 order.push({
-    customer: "Spencer Reid"
+    customer: "Benny Bob"
     items: [
          {name: 'espresso', quantity: 3},
            {name: "latte", quantity: 7},
@@ -23,9 +23,39 @@ orders.push(order);
 console.log(orders);
  //"Initialize orders array"
 
+ // Task 3 -  Create a Function to Place an Order
+ function placeOrder (customerName, items) {
+    //Checking item availability
+    for( let quantity in items) {
+        inventory.find(item => item.name ===item);
+        if(!items) {
+            console.log( "Error: Item not found");
+            break;
+        }
+        if(item.quantity > inventory.quantity) {
+            console.log("Error:insufficient stock");
+            break;
+        } 
+    }
+ }
+ for (let quantity in items) {
+    inventory.find(item => item.name ===item);
+    item.quantity -=inventory.quantity;  
+ } 
+ //"pending" order.push example from above
+ orders.push({
+    customerName: customerName,
+    items: [{name:name, quantity: quantity}],
+    status: "pending"
+ });
+ console.log(placeOrder("Benny Bob", {name:espresso, quantity: 3}, {name:"latte", quantity: 7}))
+//Create placeOrder function
 
 
-//Task 3 - Create a Function to Place an Order
+
+
+
+
 
 
 

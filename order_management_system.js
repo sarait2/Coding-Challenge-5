@@ -84,14 +84,24 @@ function calculateOrderTotal = (order, price) {
     const order = orders.find(order => order.customerName === customerName);
     
     if (!order) {
-      console.log(`Error: ${customerName} not found.`);
+      console.log(`Error: ${"Benny Bob"} not found.`);
       return;
     }
     // Change the status to "Completed"
     order.status = "Completed";
-    console.log(`${customerName} is complete.`);
+    console.log(`${"Benny Bob"} is complete.`);
   };
   // Create completeOrder function
+
+  // Task 6 - Create a Function to Check Pending Orders
+  function checkPendingOrders = () {
+    pendingOrders = orders.filter(order => order.status === "Pending");
+    if (order.status = 'PENDING') {
+        return;
+        
+      }}
+      console.log ('Order Pending: ${checkpendingOrders}')
+      //Create checkPendingOrders function
 
   
   
